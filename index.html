@@ -3,56 +3,194 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Resolute Business Brokers</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Resolute Business Advisors</title>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Merriweather:wght@300;700&display=swap" rel="stylesheet">
+
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: 'Montserrat', sans-serif;
+      color: white;
+      scroll-behavior: smooth;
+    }
+
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      background: rgba(0,0,0,0.75);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      z-index: 1000;
+    }
+
+    nav .logo {
+      font-family: 'Merriweather', serif;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li {
+      margin-left: 25px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #e63946;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: url('https://upload.wikimedia.org/wikipedia/commons/2/23/Las_Vegas_Strip_at_night_2010.jpg') no-repeat center center/cover;
+      height: 100vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.6);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      padding: 20px;
+      margin-top: 60px; /* offset for nav bar */
+    }
+
+    .hero h1 {
+      font-family: 'Merriweather', serif;
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      background: #e63946;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+    .btn:hover {
+      background: #d62828;
+    }
+
+    /* Sections */
+    section {
+      padding: 80px 20px;
+      text-align: center;
+      background: #222;
+    }
+
+    section:nth-of-type(even) {
+      background: #333;
+    }
+
+    section h2 {
+      font-family: 'Merriweather', serif;
+      margin-bottom: 20px;
+      font-size: 2rem;
+    }
+
+    section p {
+      max-width: 700px;
+      margin: 0 auto 20px;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    footer {
+      background: #111;
+      padding: 20px;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <nav>
-      <h1>Resolute Business Brokers</h1>
-      <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
 
-  <section id="hero">
-    <h2>Your Trusted Partner in Business Sales</h2>
-    <p>We help business owners across the nation sell their companies with the care and expertise of a trusted advisor.</p>
-    <a href="#contact" class="btn">Request a Consultation</a>
-  </section>
+  <!-- Navigation -->
+  <nav>
+    <div class="logo">Resolute</div>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
+  <!-- Hero Section -->
+  <div class="hero">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1>Resolute Business Advisors</h1>
+      <p>Your trusted partner in buying and selling businesses nationwide.</p>
+      <a href="#contact" class="btn">Get in Touch</a>
+    </div>
+  </div>
+
+  <!-- About Section -->
   <section id="about">
     <h2>About Us</h2>
     <p>
-      Based in Las Vegas, Nevada, Resolute Business Brokers is a nationwide business brokerage firm. 
-      Much like a realtor helps homeowners sell their property, we specialize in guiding business owners 
-      through every step of the sale process. Our mission is to maximize value, maintain confidentiality, 
-      and connect sellers with qualified buyers.
+      Based in Las Vegas, Nevada, Resolute Business Advisors provides expert brokerage services to business owners across the United States. Much like a realtor helps homeowners, we help entrepreneurs sell their businesses for maximum value while ensuring a smooth transaction process.
     </p>
   </section>
 
+  <!-- Services Section -->
   <section id="services">
     <h2>Our Services</h2>
-    <ul>
-      <li><strong>Business Valuations:</strong> Accurate assessments to help you understand the true value of your business.</li>
-      <li><strong>Confidential Marketing:</strong> Discreetly presenting your business to qualified buyers nationwide.</li>
-      <li><strong>Negotiation & Closing:</strong> Professional guidance from listing to successful sale.</li>
-    </ul>
+    <p>
+      We specialize in confidential business sales, valuations, and buyer matchmaking. Whether you're looking to exit your company or acquire a new one, our team is here to guide you every step of the way.
+    </p>
   </section>
 
+  <!-- Contact Section -->
   <section id="contact">
     <h2>Contact Us</h2>
-    <p>Email: <a href="mailto:chris@resolutebrokers.com">info@resolutebrokers.com</a></p>
-    <p>Phone: (702) 555-1234</p>
-    <p>Location: Las Vegas, NV — Serving Clients Nationwide</p>
+    <p>
+      Ready to take the next step? Let’s talk.  
+      Email us at <a href="mailto:info@resolutebusinessadvisors.com" style="color:#e63946;">info@resolutebusinessadvisors.com</a>.
+    </p>
   </section>
 
+  <!-- Footer -->
   <footer>
-    <p>&copy; 2025 Resolute Business Brokers. All rights reserved.</p>
+    &copy; 2025 Resolute Business Advisors | Las Vegas, NV
   </footer>
-</body>
 
+</body>
 </html>
