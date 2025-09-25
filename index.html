@@ -1,148 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Resolute Business Advisors</title>
-  
+
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Merriweather:wght@300;700&display=swap" rel="stylesheet">
 
   <style>
-    body, html {
-      margin: 0;
-      padding: 0;
-      font-family: 'Montserrat', sans-serif;
-      color: white;
-      scroll-behavior: smooth;
+    :root{
+      --accent:#e63946;
+      --nav-bg: rgba(0,0,0,0.65);
     }
+    html,body{height:100%;margin:0;font-family:'Montserrat',sans-serif;color:#fff;scroll-behavior:smooth;}
+    /* NAV */
+    nav{
+      position:fixed;top:0;left:0;width:100%;background:var(--nav-bg);
+      display:flex;justify-content:space-between;align-items:center;padding:14px 28px;z-index:1200;
+    }
+    .logo{font-family:'Merriweather',serif;font-size:1.3rem;font-weight:700;}
+    nav ul{display:flex;gap:20px;list-style:none;margin:0;padding:0;}
+    nav a{color:#fff;text-decoration:none;font-weight:600;}
+    nav a:hover{color:var(--accent);}
 
-    /* Navigation */
-    nav {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%;
-      background: rgba(0,0,0,0.75);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px 40px;
-      z-index: 1000;
+    /* HERO - local image first, Wikimedia fallback second */
+    .hero{
+      background-image:
+        url('images/lasvegas.jpg'),
+        url('https://upload.wikimedia.org/wikipedia/commons/2/23/Las_Vegas_Strip_at_night_2010.jpg');
+      background-repeat:no-repeat;
+      background-position:center center;
+      background-size:cover;
+      height:100vh;
+      position:relative;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
     }
-
-    nav .logo {
-      font-family: 'Merriweather', serif;
-      font-size: 1.5rem;
-      font-weight: bold;
+    .overlay{
+      position:absolute;inset:0;background:rgba(0,0,0,0.45); /* reduce darkness so image shows through */
     }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      margin: 0;
-      padding: 0;
-    }
-
-    nav ul li {
-      margin-left: 25px;
-    }
-
-    nav ul li a {
-      color: white;
-      text-decoration: none;
-      font-weight: 600;
-      transition: color 0.3s;
-    }
-
-    nav ul li a:hover {
-      color: #e63946;
-    }
-
-    /* Hero Section */
-  .hero {
-    background: url('https://upload.wikimedia.org/wikipedia/commons/2/23/Las_Vegas_Strip_at_night_2010.jpg') no-repeat center center/cover;
-    height: 100vh;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    }
-
-    .overlay {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0,0,0,0.6);
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      max-width: 800px;
-      padding: 20px;
-      margin-top: 60px; /* offset for nav bar */
-    }
-
-    .hero h1 {
-      font-family: 'Merriweather', serif;
-      font-size: 3rem;
-      margin-bottom: 20px;
-    }
-
-    .hero p {
-      font-size: 1.25rem;
-      margin-bottom: 30px;
-    }
-
-    .btn {
-      background: #e63946;
-      color: white;
-      padding: 12px 24px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: background 0.3s;
-    }
-    .btn:hover {
-      background: #d62828;
-    }
+    .hero-content{position:relative;z-index:2;max-width:900px;padding:20px;margin-top:56px;}
+    .hero h1{font-family:'Merriweather',serif;font-size:3rem;margin:0 0 12px;}
+    .hero p{font-size:1.15rem;margin:0 0 18px;line-height:1.5;}
+    .btn{background:var(--accent);color:#fff;padding:12px 22px;border-radius:8px;text-decoration:none;font-weight:700;}
+    .btn:hover{filter:brightness(.95);}
 
     /* Sections */
-    section {
-      padding: 80px 20px;
-      text-align: center;
-      background: #222;
-    }
+    section{padding:80px 20px;text-align:center;background:#1f1f1f;}
+    section:nth-of-type(even){background:#2b2b2b;}
+    section h2{font-family:'Merriweather',serif;font-size:2rem;margin-bottom:14px;color:#fff;}
+    section p{max-width:760px;margin:0 auto;font-size:1.05rem;line-height:1.6;color:#ddd;}
 
-    section:nth-of-type(even) {
-      background: #333;
-    }
-
-    section h2 {
-      font-family: 'Merriweather', serif;
-      margin-bottom: 20px;
-      font-size: 2rem;
-    }
-
-    section p {
-      max-width: 700px;
-      margin: 0 auto 20px;
-      font-size: 1.1rem;
-      line-height: 1.6;
-    }
-
-    footer {
-      background: #111;
-      padding: 20px;
-      text-align: center;
-      font-size: 0.9rem;
+    footer{background:#0f0f0f;padding:18px;text-align:center;font-size:0.95rem;color:#bbb;}
+    /* Responsive */
+    @media (max-width:720px){
+      .hero h1{font-size:2rem;}
+      nav{padding:10px 16px;}
     }
   </style>
 </head>
 <body>
 
-  <!-- Navigation -->
   <nav>
     <div class="logo">Resolute</div>
     <ul>
@@ -152,50 +73,30 @@
     </ul>
   </nav>
 
-  <!-- Hero Section -->
-  <div class="hero">
-    <div class="overlay"></div>
+  <header class="hero" role="banner">
+    <div class="overlay" aria-hidden="true"></div>
     <div class="hero-content">
       <h1>Resolute Business Advisors</h1>
-      <p>Your trusted partner in buying and selling businesses nationwide.</p>
-      <a href="#contact" class="btn">Get in Touch</a>
+      <p>Your trusted partner in buying and selling businesses nationwide — based in Las Vegas, NV.</p>
+      <a class="btn" href="#contact">Request a Consultation</a>
     </div>
-  </div>
+  </header>
 
-  <!-- About Section -->
   <section id="about">
     <h2>About Us</h2>
-    <p>
-      Based in Las Vegas, Nevada, Resolute Business Advisors provides expert brokerage services to business owners across the United States. Much like a realtor helps homeowners, we help entrepreneurs sell their businesses for maximum value while ensuring a smooth transaction process.
-    </p>
+    <p>Resolute Business Advisors is a nationwide business brokerage firm headquartered in Las Vegas, NV. Much like a realtor for homes, we help business owners sell their companies with confidentiality and professional care.</p>
   </section>
 
-  <!-- Services Section -->
   <section id="services">
     <h2>Our Services</h2>
-    <p>
-      We specialize in confidential business sales, valuations, and buyer matchmaking. Whether you're looking to exit your company or acquire a new one, our team is here to guide you every step of the way.
-    </p>
+    <p>Business valuations, confidential marketing, buyer vetting, negotiation support, and closing guidance — from listing to transfer of ownership.</p>
   </section>
 
-  <!-- Contact Section -->
   <section id="contact">
     <h2>Contact Us</h2>
-    <p>
-      Ready to take the next step? Let’s talk.  
-      Email us at <a href="mailto:info@resolutebusinessadvisors.com" style="color:#e63946;">info@resolutebusinessadvisors.com</a>.
-    </p>
+    <p>Email: <a href="mailto:info@resolutebusinessadvisors.com" style="color:var(--accent);">info@resolutebusinessadvisors.com</a><br>Phone: (702) 555-1234</p>
   </section>
 
-  <!-- Footer -->
-  <footer>
-    &copy; 2025 Resolute Business Advisors | Las Vegas, NV
-  </footer>
-
+  <footer>&copy; 2025 Resolute Business Advisors | Las Vegas, NV</footer>
 </body>
-
 </html>
-
-
-
-
