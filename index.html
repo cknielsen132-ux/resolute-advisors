@@ -76,10 +76,11 @@
       padding:20px;
       margin-top:56px;
     }
-    .hero h1 {
-      font-family:'Merriweather',serif;
-      font-size:3rem;
-      margin:0 0 12px;
+    .logo-hero {
+      max-width: 320px;   /* keeps logo from being too large */
+      width: 80%;         /* responsive scaling */
+      height: auto;
+      margin-bottom: 16px;
     }
     .hero p {
       font-size:1.15rem;
@@ -131,7 +132,6 @@
 
     /* Responsive */
     @media (max-width:720px) {
-      .hero h1 {font-size:2rem;}
       .hero p {font-size:1rem;}
 
       nav ul {
@@ -168,7 +168,7 @@
   <header class="hero" role="banner">
     <div class="overlay" aria-hidden="true"></div>
     <div class="hero-content">
-      <h1>Resolute Business Brokers</h1>
+      <img src="logo.png" alt="Resolute Business Brokers" class="logo-hero">
       <p>Your trusted partner in buying and selling businesses nationwide — based in Las Vegas, NV.</p>
       <a class="btn" href="#contact">Request a Consultation</a>
     </div>
