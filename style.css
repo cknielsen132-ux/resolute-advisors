@@ -42,5 +42,6 @@ footer {
   width: 80%;         /* scales down nicely on smaller screens */
   height: auto;
   margin-bottom: 16px;
-  margin-top: -40px;  /* moves logo up about 1/2 inch */
+  position: relative;
+  top: -40px;   /* move logo upward about 1/2 inch */
 }
