@@ -10,147 +10,159 @@
 
   <style>
     :root {
-      --accent:#e63946;
+      --accent: #e63946;
       --nav-bg: rgba(0,0,0,0.65);
     }
-    html,body {
-      height:100%;
-      margin:0;
-      font-family:'Montserrat',sans-serif;
-      color:#fff;
-      scroll-behavior:smooth;
+
+    html, body {
+      height: 100%;
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      color: #fff;
+      scroll-behavior: smooth;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
     }
 
     /* NAV */
     nav {
-      position:fixed;
-      top:0;left:0;width:100%;
-      background:var(--nav-bg);
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      padding:12px 16px;
-      z-index:1200;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      background: var(--nav-bg);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 16px;
+      z-index: 1200;
     }
     .menu-toggle {
-      display:none;
-      font-size:1.8rem;
-      cursor:pointer;
-      background:none;
-      border:none;
-      color:#fff;
+      display: none;
+      font-size: 1.8rem;
+      cursor: pointer;
+      background: none;
+      border: none;
+      color: #fff;
     }
     nav ul {
-      display:flex;
-      gap:16px;
-      list-style:none;
-      margin:0;
-      padding:0;
+      display: flex;
+      gap: 16px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
     }
     nav a {
-      color:#fff;
-      text-decoration:none;
-      font-weight:600;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
     }
-    nav a:hover {color:var(--accent);}
+    nav a:hover { color: var(--accent); }
 
     /* HERO */
     .hero {
       background: url('lasvegas.jpg') no-repeat center center/cover;
       height: 100vh;
       position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
+      overflow: hidden;
     }
     .overlay {
-      position:absolute;
-      inset:0;
-      background:rgba(0,0,0,0.35);
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.35);
+      pointer-events: none;
     }
+
+    /* Absolute positioning + translate to move up reliably */
     .hero-content {
-      position:relative;
-      z-index:2;
-      max-width:900px;
-      padding:20px;
-      margin-top:56px;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%) translateY(-48px); /* <- moves up 0.5 inch */
+      z-index: 2;
+      width: 100%;
+      max-width: 920px;
+      padding: 20px;
+      box-sizing: border-box;
+      text-align: center;
     }
+
     .logo-hero {
-      max-width: 320px;   /* keeps logo from being too large */
-      width: 80%;         /* responsive scaling */
+      display: block;
+      margin: 0 auto 16px;
+      max-width: 320px;
+      width: 80%;
       height: auto;
-      margin-bottom: 16px;
     }
+
     .hero p {
-      font-size:1.15rem;
-      margin:0 0 18px;
-      line-height:1.5;
+      font-size: 1.15rem;
+      margin: 0 0 18px;
+      line-height: 1.5;
+      color: #f3f3f3;
     }
     .btn {
-      background:var(--accent);
-      color:#fff;
-      padding:12px 22px;
-      border-radius:8px;
-      text-decoration:none;
-      font-weight:700;
+      background: var(--accent);
+      color: #fff;
+      padding: 12px 22px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
     }
-    .btn:hover {filter:brightness(.95);}
+    .btn:hover { filter: brightness(.95); }
 
     /* Sections */
     section {
-      padding:80px 20px;
-      text-align:center;
-      background:linear-gradient(to bottom,#1f1f1f,#2b2b2b);
-      scroll-margin-top:80px;
+      padding: 80px 20px;
+      text-align: center;
+      background: linear-gradient(to bottom,#1f1f1f,#2b2b2b);
+      scroll-margin-top: 90px;
     }
     section:nth-of-type(even) {
-      background:linear-gradient(to bottom,#2b2b2b,#1f1f1f);
+      background: linear-gradient(to bottom,#2b2b2b,#1f1f1f);
     }
     section h2 {
-      font-family:'Merriweather',serif;
-      font-size:2.2rem;
-      font-weight:700;
-      margin-bottom:20px;
-      color:#fff;
+      font-family: 'Merriweather', serif;
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: #fff;
     }
     section p {
-      max-width:760px;
-      margin:0 auto;
-      font-size:1.05rem;
-      line-height:1.6;
-      color:#ddd;
+      max-width: 760px;
+      margin: 0 auto;
+      font-size: 1.05rem;
+      line-height: 1.6;
+      color: #ddd;
     }
 
     footer {
-      background:#0f0f0f;
-      padding:18px;
-      text-align:center;
-      font-size:0.95rem;
-      color:#bbb;
+      background: #0f0f0f;
+      padding: 18px;
+      text-align: center;
+      font-size: 0.95rem;
+      color: #bbb;
     }
 
-    /* Responsive */
-    @media (max-width:720px) {
-      .hero p {font-size:1rem;}
-
+    /* Responsive adjustments */
+    @media (max-width: 720px) {
+      .hero p { font-size: 1rem; }
+      .logo-hero { max-width: 240px; width: 70%; }
+      /* smaller upward nudge on phones */
+      .hero-content { transform: translate(-50%, -50%) translateY(-24px); }
+      /* mobile nav */
       nav ul {
-        display:none;
-        flex-direction:column;
-        position:absolute;
-        top:60px;
-        right:0;
-        background:var(--nav-bg);
-        width:200px;
-        padding:20px;
-        border-radius:0 0 0 12px;
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: var(--nav-bg);
+        width: 220px;
+        padding: 16px;
+        border-radius: 0 0 0 12px;
       }
-      nav ul.open {
-        display:flex;
-      }
-      .menu-toggle {
-        display:block;
-      }
+      nav ul.open { display: flex; }
+      .menu-toggle { display: block; }
     }
   </style>
 </head>
@@ -167,7 +179,9 @@
 
   <header class="hero" role="banner">
     <div class="overlay" aria-hidden="true"></div>
-    <div class="hero-content">
+
+    <div class="hero-content" id="heroContent">
+      <!-- Make sure logo.png is uploaded to the repo root beside index.html -->
       <img src="logo.png" alt="Resolute Business Brokers" class="logo-hero">
       <p>Your trusted partner in buying and selling businesses nationwide — based in Las Vegas, NV.</p>
       <a class="btn" href="#contact">Request a Consultation</a>
@@ -194,11 +208,11 @@
 
   <script>
     // Mobile menu toggle
-    const toggle = document.querySelector('.menu-toggle');
-    const menu = document.querySelector('nav ul');
-    toggle.addEventListener('click', () => {
-      menu.classList.toggle('open');
-    });
+    (function () {
+      const toggle = document.querySelector('.menu-toggle');
+      const menu = document.querySelector('nav ul');
+      toggle.addEventListener('click', () => menu.classList.toggle('open'));
+    })();
   </script>
 </body>
 </html>
