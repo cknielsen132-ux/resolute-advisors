@@ -36,3 +36,11 @@ footer {
   text-align: center;
   padding: 1rem;
 }
+
+.logo-hero {
+  max-width: 320px;   /* keeps logo from being too large */
+  width: 80%;         /* scales down nicely on smaller screens */
+  height: auto;
+  margin-bottom: 16px;
+  margin-top: -40px;  /* moves logo up about 1/2 inch */
+}
