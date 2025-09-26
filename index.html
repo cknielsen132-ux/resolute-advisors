@@ -25,19 +25,14 @@
     nav a:hover{color:var(--accent);}
 
     /* HERO - local image first, Wikimedia fallback second */
-    .hero{
-      background-image:
-        url('images/lasvegas.jpg'),
-        url('https://upload.wikimedia.org/wikipedia/commons/2/23/Las_Vegas_Strip_at_night_2010.jpg');
-      background-repeat:no-repeat;
-      background-position:center center;
-      background-size:cover;
-      height:100vh;
-      position:relative;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      text-align:center;
+  .hero {
+    background: url('lasvegas.jpg') no-repeat center center/cover;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
     }
     .overlay{
       position:absolute;inset:0;background:rgba(0,0,0,0.45); /* reduce darkness so image shows through */
@@ -99,4 +94,5 @@
 
   <footer>&copy; 2025 Resolute Business Advisors | Las Vegas, NV</footer>
 </body>
+
 </html>
