@@ -3,57 +3,132 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Resolute Business Advisors</title>
+  <title>Resolute Business Brokers</title>
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Merriweather:wght@300;700&display=swap" rel="stylesheet">
 
   <style>
-    :root{
+    :root {
       --accent:#e63946;
       --nav-bg: rgba(0,0,0,0.65);
     }
-    html,body{height:100%;margin:0;font-family:'Montserrat',sans-serif;color:#fff;scroll-behavior:smooth;}
-    /* NAV */
-    nav{
-      position:fixed;top:0;left:0;width:100%;background:var(--nav-bg);
-      display:flex;justify-content:space-between;align-items:center;padding:14px 28px;z-index:1200;
+    html,body {
+      height:100%;
+      margin:0;
+      font-family:'Montserrat',sans-serif;
+      color:#fff;
+      scroll-behavior:smooth;
     }
-    .logo{font-family:'Merriweather',serif;font-size:1.3rem;font-weight:700;}
-    nav ul{display:flex;gap:20px;list-style:none;margin:0;padding:0;}
-    nav a{color:#fff;text-decoration:none;font-weight:600;}
-    nav a:hover{color:var(--accent);}
 
-    /* HERO - local image first, Wikimedia fallback second */
-  .hero {
-    background: url('lasvegas.jpg') no-repeat center center/cover;
-    height: 100vh;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+    /* NAV */
+    nav {
+      position:fixed;
+      top:0;left:0;width:100%;
+      background:var(--nav-bg);
+      display:flex;justify-content:space-between;align-items:center;
+      padding:14px 28px;
+      z-index:1200;
     }
-    .overlay{
-      position:absolute;inset:0;background:rgba(0,0,0,0.45); /* reduce darkness so image shows through */
+    .logo {
+      font-family:'Merriweather',serif;
+      font-size:1.3rem;
+      font-weight:700;
     }
-    .hero-content{position:relative;z-index:2;max-width:900px;padding:20px;margin-top:56px;}
-    .hero h1{font-family:'Merriweather',serif;font-size:3rem;margin:0 0 12px;}
-    .hero p{font-size:1.15rem;margin:0 0 18px;line-height:1.5;}
-    .btn{background:var(--accent);color:#fff;padding:12px 22px;border-radius:8px;text-decoration:none;font-weight:700;}
-    .btn:hover{filter:brightness(.95);}
+    nav ul {
+      display:flex;
+      gap:20px;
+      list-style:none;
+      margin:0;
+      padding:0;
+    }
+    nav a {
+      color:#fff;
+      text-decoration:none;
+      font-weight:600;
+    }
+    nav a:hover {color:var(--accent);}
+
+    /* HERO */
+    .hero {
+      background: url('lasvegas.jpg') no-repeat center center/cover;
+      height: 100vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    .overlay {
+      position:absolute;
+      inset:0;
+      background:rgba(0,0,0,0.35); /* lighter overlay */
+    }
+    .hero-content {
+      position:relative;
+      z-index:2;
+      max-width:900px;
+      padding:20px;
+      margin-top:56px;
+    }
+    .hero h1 {
+      font-family:'Merriweather',serif;
+      font-size:3rem;
+      margin:0 0 12px;
+    }
+    .hero p {
+      font-size:1.15rem;
+      margin:0 0 18px;
+      line-height:1.5;
+    }
+    .btn {
+      background:var(--accent);
+      color:#fff;
+      padding:12px 22px;
+      border-radius:8px;
+      text-decoration:none;
+      font-weight:700;
+    }
+    .btn:hover {filter:brightness(.95);}
 
     /* Sections */
-    section{padding:80px 20px;text-align:center;background:#1f1f1f;}
-    section:nth-of-type(even){background:#2b2b2b;}
-    section h2{font-family:'Merriweather',serif;font-size:2rem;margin-bottom:14px;color:#fff;}
-    section p{max-width:760px;margin:0 auto;font-size:1.05rem;line-height:1.6;color:#ddd;}
+    section {
+      padding:80px 20px;
+      text-align:center;
+      background:linear-gradient(to bottom,#1f1f1f,#2b2b2b);
+      scroll-margin-top:80px;
+    }
+    section:nth-of-type(even) {
+      background:linear-gradient(to bottom,#2b2b2b,#1f1f1f);
+    }
+    section h2 {
+      font-family:'Merriweather',serif;
+      font-size:2.2rem;
+      font-weight:700;
+      margin-bottom:20px;
+      color:#fff;
+    }
+    section p {
+      max-width:760px;
+      margin:0 auto;
+      font-size:1.05rem;
+      line-height:1.6;
+      color:#ddd;
+    }
 
-    footer{background:#0f0f0f;padding:18px;text-align:center;font-size:0.95rem;color:#bbb;}
+    footer {
+      background:#0f0f0f;
+      padding:18px;
+      text-align:center;
+      font-size:0.95rem;
+      color:#bbb;
+    }
+
     /* Responsive */
-    @media (max-width:720px){
-      .hero h1{font-size:2rem;}
-      nav{padding:10px 16px;}
+    @media (max-width:720px) {
+      .hero h1 {font-size:2rem;}
+      .hero p {font-size:1rem;}
+      nav {padding:10px 16px;}
     }
   </style>
 </head>
@@ -71,7 +146,7 @@
   <header class="hero" role="banner">
     <div class="overlay" aria-hidden="true"></div>
     <div class="hero-content">
-      <h1>Resolute Business Advisors</h1>
+      <h1>Resolute Business Brokers</h1>
       <p>Your trusted partner in buying and selling businesses nationwide — based in Las Vegas, NV.</p>
       <a class="btn" href="#contact">Request a Consultation</a>
     </div>
@@ -79,7 +154,7 @@
 
   <section id="about">
     <h2>About Us</h2>
-    <p>Resolute Business Advisors is a nationwide business brokerage firm headquartered in Las Vegas, NV. Much like a realtor for homes, we help business owners sell their companies with confidentiality and professional care.</p>
+    <p>Resolute Business Brokers is a nationwide business brokerage firm headquartered in Las Vegas, NV. Much like a realtor for homes, we help business owners sell their companies with confidentiality and professional care.</p>
   </section>
 
   <section id="services">
@@ -89,10 +164,10 @@
 
   <section id="contact">
     <h2>Contact Us</h2>
-    <p>Email: <a href="mailto:info@resolutebusinessadvisors.com" style="color:var(--accent);">info@resolutebusinessadvisors.com</a><br>Phone: (702) 555-1234</p>
+    <p>Email: <a href="mailto:info@resolutebusinessbrokers.com" style="color:var(--accent);">info@resolutebusinessbrokers.com</a><br>
+    Phone: (702) 555-1234</p>
   </section>
 
-  <footer>&copy; 2025 Resolute Business Advisors | Las Vegas, NV</footer>
+  <footer>&copy; 2025 Resolute Business Brokers | Las Vegas, NV</footer>
 </body>
-
 </html>
