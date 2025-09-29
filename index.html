@@ -72,7 +72,6 @@
       pointer-events: none;
     }
 
-    /* Absolute positioning + translate to move up reliably */
     .hero-content {
       position: absolute;
       left: 50%;
@@ -110,6 +109,20 @@
     }
     .btn:hover { filter: brightness(.95); }
 
+    /* Logos beside button */
+    .cta-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 18px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+    .side-logo {
+      max-height: 60px;
+      width: auto;
+    }
+
     /* Sections */
     section {
       padding: 80px 20px;
@@ -146,10 +159,8 @@
     /* Responsive adjustments */
     @media (max-width: 720px) {
       .hero p { font-size: 1rem; }
-      .logo-hero { max-width: 300px; width: 70%; } /* 25% bigger on mobile */
-      /* smaller upward nudge on phones */
+      .logo-hero { max-width: 300px; width: 70%; }
       .hero-content { transform: translate(-50%, -50%) translateY(-24px); }
-      /* mobile nav */
       nav ul {
         display: none;
         flex-direction: column;
@@ -163,6 +174,7 @@
       }
       nav ul.open { display: flex; }
       .menu-toggle { display: block; }
+      .side-logo { max-height: 50px; }
     }
   </style>
 </head>
@@ -181,10 +193,15 @@
     <div class="overlay" aria-hidden="true"></div>
 
     <div class="hero-content" id="heroContent">
-      <!-- Make sure logo.png is uploaded to the repo root beside index.html -->
       <img src="logo.png" alt="Resolute Business Brokers" class="logo-hero">
       <p>Your trusted partner in buying and selling businesses nationwide — based in Las Vegas, NV.</p>
-      <a class="btn" href="#contact">Request a Consultation</a>
+
+      <!-- Logos beside button -->
+      <div class="cta-row">
+        <img src="CMAA logo.png" alt="CMAA Logo" class="side-logo">
+        <a class="btn" href="#contact">Request a Consultation</a>
+        <img src="AMAA logo.png" alt="AMAA Logo" class="side-logo">
+      </div>
     </div>
   </header>
 
