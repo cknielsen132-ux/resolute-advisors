@@ -114,13 +114,19 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 18px;
+      gap: 24px; /* more space between logos and button */
       margin-top: 20px;
       flex-wrap: wrap;
     }
     .side-logo {
-      max-height: 60px;
+      max-height: 75px; /* 25% bigger than original 60px */
       width: auto;
+    }
+    .side-logo:first-child {
+      margin-right: 6px; /* push CMAA logo outward */
+    }
+    .side-logo:last-child {
+      margin-left: 6px;  /* push AMAA logo outward */
     }
 
     /* Sections */
@@ -174,7 +180,7 @@
       }
       nav ul.open { display: flex; }
       .menu-toggle { display: block; }
-      .side-logo { max-height: 50px; }
+      .side-logo { max-height: 65px; } /* keep scaled up on mobile too */
     }
   </style>
 </head>
@@ -233,4 +239,3 @@
   </script>
 </body>
 </html>
-
