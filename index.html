@@ -4,260 +4,62 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Resolute Business Brokers</title>
-
-  <!-- SEO -->
   <meta name="description" content="Resolute Business Brokers helps clients nationwide buy and sell businesses with expert valuations, negotiations, and closing support.">
-
-  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Merriweather:wght@300;700&display=swap" rel="stylesheet">
-
   <style>
     :root {
       --accent: #e63946;
       --nav-bg: rgba(0,0,0,0.65);
-      --space-xs: 8px;
-      --space-sm: 16px;
-      --space-md: 24px;
-      --space-lg: 48px;
-      --space-xl: 80px;
     }
-
-    html, body {
-      height: 100%;
-      margin: 0;
-      font-family: 'Montserrat', sans-serif;
-      color: #fff;
-      scroll-behavior: smooth;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      background: #1f1f1f;
-    }
-
-    /* NAV */
-    nav {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%;
-      background: var(--nav-bg);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: var(--space-sm) var(--space-md);
-      box-sizing: border-box;
-      z-index: 1200;
-      flex-wrap: wrap; /* prevents cutoff */
-    }
-    nav .brand-logo {
-      max-height: 48px;
-      width: auto;
-    }
-    .menu-toggle {
-      display: none;
-      font-size: 1.8rem;
-      cursor: pointer;
-      background: none;
-      border: none;
-      color: #fff;
-      margin-left: auto; /* keeps toggle from overlapping links */
-    }
-    nav ul {
-      display: flex;
-      gap: var(--space-sm);
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      flex-wrap: wrap; /* wrap links if too long */
-    }
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: 600;
-    }
-    nav a:hover { color: var(--accent); }
-
-    /* HERO */
-    .hero {
-      background: url('lasvegas.jpg') no-repeat center center/cover;
-      height: 100vh;
-      position: relative;
-      overflow: hidden;
-    }
-    .overlay {
-      position: absolute;
-      inset: 0;
-      background: rgba(0,0,0,0.35);
-      pointer-events: none;
-    }
-
-    .hero-content {
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%) translateY(-48px);
-      z-index: 2;
-      width: 100%;
-      max-width: 920px;
-      padding: var(--space-sm);
-      box-sizing: border-box;
-      text-align: center;
-    }
-
-    .logo-hero {
-      display: block;
-      margin: 0 auto var(--space-sm);
-      max-width: 400px;
-      width: 80%;
-      height: auto;
-    }
-
-    .hero p {
-      font-size: 1.15rem;
-      margin: 0 0 var(--space-md);
-      line-height: 1.5;
-      color: #f3f3f3;
-    }
-    .btn {
-      background: var(--accent);
-      color: #fff;
-      padding: 12px 22px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 700;
-    }
-    .btn:hover { filter: brightness(.95); }
-
-    /* Logos beside button */
-    .cta-row {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: var(--space-md);
-      margin-top: var(--space-sm);
-      flex-wrap: wrap;
-    }
-    .side-logo {
-      max-height: 75px;
-      width: auto;
-    }
-
-    /* Sections */
-    section {
-      padding: var(--space-xl) var(--space-sm);
-      text-align: center;
-      background: linear-gradient(to bottom,#1f1f1f,#2b2b2b);
-      scroll-margin-top: 90px;
-    }
-    section:nth-of-type(even) {
-      background: linear-gradient(to bottom,#2b2b2b,#1f1f1f);
-    }
-    section h2 {
-      font-family: 'Merriweather', serif;
-      font-size: 2.2rem;
-      font-weight: 700;
-      margin-bottom: var(--space-md);
-      color: #fff;
-    }
-    section p {
-      max-width: 760px;
-      margin: 0 auto;
-      font-size: 1.05rem;
-      line-height: 1.6;
-      color: #ddd;
-    }
-
-    footer {
-      background: #0f0f0f;
-      padding: var(--space-sm);
-      text-align: center;
-      font-size: 0.95rem;
-      color: #bbb;
-    }
-
-    /* Responsive adjustments */
-    @media (max-width: 720px) {
-      .hero p { font-size: 1rem; }
-      .logo-hero { max-width: 300px; width: 70%; }
-      .hero-content { transform: translate(-50%, -50%) translateY(-24px); }
-      nav ul {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        right: 0;
-        background: var(--nav-bg);
-        width: 220px;
-        padding: var(--space-sm);
-        border-radius: 0 0 0 12px;
-      }
-      nav ul.open { display: flex; }
-      .menu-toggle { display: block; }
-      .side-logo { max-height: 65px; }
-    }
+    body { margin:0; font-family:'Montserrat',sans-serif; background:#1f1f1f; color:#fff; }
+    nav { position:fixed;top:0;left:0;width:100%;background:var(--nav-bg);display:flex;justify-content:space-between;align-items:center;padding:10px 20px;box-sizing:border-box;z-index:1200; }
+    nav .brand-logo { max-height:48px;width:auto; }
+    nav ul { display:flex;gap:16px;list-style:none;margin:0;padding:0; }
+    nav a { color:#fff;text-decoration:none;font-weight:600; }
+    nav a:hover { color:var(--accent); }
+    .nav-contact a { color:var(--accent);font-weight:700;margin-left:20px;text-decoration:none; }
+    .hero { background:url('lasvegas.jpg') no-repeat center center/cover; height:100vh; position:relative; }
+    .overlay { position:absolute;inset:0;background:rgba(0,0,0,0.35); }
+    .hero-content { position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); text-align:center; }
+    .logo-hero { max-width:400px;width:80%;height:auto; margin-bottom:20px; }
   </style>
 </head>
 <body>
-
   <nav role="navigation">
-    <a href="#heroContent"><img src="logo.png" alt="Resolute Business Brokers Logo" class="brand-logo"></a>
-    <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    <img src="logo.png" alt="Resolute Business Brokers logo" class="brand-logo" loading="lazy" />
     <ul>
-      <li><a href="#heroContent">Home</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#services">Services</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
+    <div class="nav-contact">
+      <a href="tel:7027868535">(702) 786-8535</a>
+    </div>
   </nav>
 
-  <header class="hero" role="banner">
-    <div class="overlay" aria-hidden="true"></div>
-
-    <div class="hero-content" id="heroContent">
-      <img src="logo.png" alt="Resolute Business Brokers" class="logo-hero">
-      <p>Your trusted partner in buying and selling businesses nationwide — based in Las Vegas, NV.</p>
-
-      <!-- Logos beside button -->
-      <div class="cta-row">
-        <img src="CMAA-logo.png" alt="CMAA Logo" class="side-logo" loading="lazy">
-        <a class="btn" href="#contact">Request a Consultation</a>
-        <img src="AMAA-logo.png" alt="AMAA Logo" class="side-logo" loading="lazy">
-      </div>
+  <section class="hero" role="img" aria-label="Las Vegas skyline with city lights">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <img src="logo.png" alt="Resolute Business Brokers" class="logo-hero" loading="lazy" />
+      <p>Helping clients buy and sell businesses nationwide with expertise and integrity.</p>
     </div>
-  </header>
-
-  <section id="about">
-    <h2>About Us</h2>
-    <p>
-      Resolute Business Brokers is a nationwide business brokerage firm headquartered in Las Vegas, NV. 
-      The professionals at Resolute Business Brokers bring a diverse background in both asset-based and stock transactions, guiding the execution of business sales across industries. 
-      With over two decades of experience and involvement in more than a hundred transactions, our team has worked in the small and middle market from coast to coast — ranging from resort-based businesses to medical service companies. 
-      We take a hands-on approach to every engagement, carefully considering each seller’s goals and needs while crafting the best strategy and structure to achieve them. 
-      Every transaction presents monetary, legal, and legacy considerations; we address these complexities from the outset to deliver the best possible outcome for our clients in all respects.
-    </p>
   </section>
 
-  <section id="services">
-    <h2>Our Services</h2>
-    <p>Business valuations, confidential marketing, buyer vetting, negotiation support, and closing guidance — from listing to transfer of ownership.</p>
-  </section>
-
-  <section id="contact">
-    <h2>Contact Us</h2>
-    <p>Email: <a href="mailto:chris@resolutebrokers.com" style="color:var(--accent);">chris@resolutebrokers.com</a><br>
-    Phone: (702) 786-8535</p>
-  </section>
-
-  <footer>&copy; 2025 Resolute Business Brokers | Las Vegas, NV</footer>
-
-  <script>
-    // Mobile menu toggle with accessibility
-    (function () {
-      const toggle = document.querySelector('.menu-toggle');
-      const menu = document.querySelector('nav ul');
-      toggle.addEventListener('click', () => {
-        const isOpen = menu.classList.toggle('open');
-        toggle.setAttribute('aria-expanded', isOpen);
-      });
-    })();
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Resolute Business Brokers",
+    "image": "logo.png",
+    "telephone": "+17027868535",
+    "email": "chris@resolutebrokers.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Las Vegas",
+      "addressRegion": "NV",
+      "addressCountry": "US"
+    }
+  }
   </script>
 </body>
 </html>
