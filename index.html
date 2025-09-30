@@ -5,269 +5,222 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Resolute Business Brokers</title>
 
-  <!-- SEO -->
-  <meta name="description" content="Resolute Business Brokers helps clients nationwide buy and sell businesses with expert valuations, negotiations, and closing support.">
-
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Merriweather:wght@300;700&display=swap" rel="stylesheet">
 
   <style>
     :root {
+      --primary: #1e2a38;
       --accent: #e63946;
-      --nav-bg: rgba(0,0,0,0.65);
-      --space-xs: 8px;
-      --space-sm: 16px;
-      --space-md: 24px;
-      --space-lg: 48px;
-      --space-xl: 80px;
+      --light: #f1faee;
     }
 
-    html, body {
-      height: 100%;
+    body {
       margin: 0;
       font-family: 'Montserrat', sans-serif;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    header {
+      background: var(--primary);
       color: #fff;
-      scroll-behavior: smooth;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      background: #1f1f1f;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
 
     nav {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%;
-      background: var(--nav-bg);
       display: flex;
-      justify-content: flex-start;
       align-items: center;
-      padding: var(--space-sm) var(--space-md);
-      box-sizing: border-box;
-      z-index: 1200;
-      flex-wrap: wrap;
-      gap: var(--space-md);
+      justify-content: space-between;
+      padding: 0.5rem 1rem;
     }
-    nav .brand-logo {
-      max-height: 48px;
-      width: auto;
-    }
-    .nav-phone {
-      font-weight: 700;
-      color: #fff;
-      margin-left: 12px;
-      font-size: 1rem;
-    }
-    .nav-phone a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: 700;
-    }
-    .nav-phone a:hover { color: var(--accent); }
 
-    .menu-toggle {
-      display: none;
-      font-size: 1.8rem;
-      cursor: pointer;
-      background: none;
-      border: none;
-      color: #fff;
-      margin-left: auto;
+    nav .logo img {
+      height: 40px;
     }
+
     nav ul {
-      display: flex;
-      gap: var(--space-sm);
       list-style: none;
+      display: flex;
       margin: 0;
       padding: 0;
-      flex-wrap: wrap;
-      margin-left: auto;
     }
-    nav a {
+
+    nav ul li {
+      margin: 0 0.5rem;
+    }
+
+    nav ul li a {
       color: #fff;
       text-decoration: none;
       font-weight: 600;
     }
-    nav a:hover { color: var(--accent); }
+
+    .nav-phone {
+      margin-left: 1rem;
+      font-weight: 700;
+    }
+
+    .nav-phone a {
+      color: #fff;
+      text-decoration: none;
+    }
 
     .hero {
-      background: url('lasvegas.jpg') no-repeat center center/cover;
-      height: 100vh;
-      position: relative;
-      overflow: hidden;
-    }
-    .overlay {
-      position: absolute;
-      inset: 0;
-      background: rgba(0,0,0,0.35);
-      pointer-events: none;
-    }
-
-    .hero-content {
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%) translateY(-48px);
-      z-index: 2;
-      width: 100%;
-      max-width: 920px;
-      padding: var(--space-sm);
-      box-sizing: border-box;
       text-align: center;
+      background: var(--light);
+      padding: 3rem 1rem;
     }
 
-    .logo-hero {
-      display: block;
-      margin: 0 auto var(--space-sm);
-      max-width: 400px;
-      width: 80%;
-      height: auto;
+    .hero h1 {
+      font-family: 'Merriweather', serif;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: var(--primary);
     }
 
     .hero p {
-      font-size: 1.15rem;
-      margin: 0 0 var(--space-md);
-      line-height: 1.5;
-      color: #f3f3f3;
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
     }
+
     .btn {
+      display: inline-block;
       background: var(--accent);
       color: #fff;
-      padding: 12px 22px;
-      border-radius: 8px;
+      padding: 0.75rem 1.5rem;
       text-decoration: none;
-      font-weight: 700;
+      border-radius: 5px;
+      font-weight: bold;
     }
-    .btn:hover { filter: brightness(.95); }
 
-    .cta-row {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: var(--space-md);
-      margin-top: var(--space-sm);
-      flex-wrap: wrap;
-    }
-    .side-logo {
-      max-height: 75px;
-      width: auto;
+    .btn:hover {
+      background: #b71c1c;
     }
 
     section {
-      padding: var(--space-xl) var(--space-sm);
-      text-align: center;
-      background: linear-gradient(to bottom,#1f1f1f,#2b2b2b);
-      scroll-margin-top: 90px;
+      padding: 3rem 2rem;
+      max-width: 900px;
+      margin: auto;
     }
-    section:nth-of-type(even) {
-      background: linear-gradient(to bottom,#2b2b2b,#1f1f1f);
-    }
+
     section h2 {
-      font-family: 'Merriweather', serif;
-      font-size: 2.2rem;
-      font-weight: 700;
-      margin-bottom: var(--space-md);
-      color: #fff;
-    }
-    section p {
-      max-width: 760px;
-      margin: 0 auto;
-      font-size: 1.05rem;
-      line-height: 1.6;
-      color: #ddd;
+      text-align: center;
+      margin-bottom: 1.5rem;
+      color: var(--primary);
     }
 
     footer {
-      background: #0f0f0f;
-      padding: var(--space-sm);
+      background: var(--primary);
+      color: #fff;
       text-align: center;
-      font-size: 0.95rem;
-      color: #bbb;
+      padding: 1rem;
+    }
+
+    .logo-hero {
+      max-width: 320px;   
+      width: 80%;         
+      height: auto;
+      margin-bottom: 16px;
+      position: relative;
+      top: -40px;  
+    }
+
+    .phone-number {
+      font-weight: 600;
+      color: var(--accent);
     }
 
     @media (max-width: 720px) {
-      .hero p { font-size: 1rem; }
-      .logo-hero { max-width: 300px; width: 70%; }
-      .hero-content { transform: translate(-50%, -50%) translateY(-24px); }
-      nav ul {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        right: 0;
-        background: var(--nav-bg);
-        width: 220px;
-        padding: var(--space-sm);
-        border-radius: 0 0 0 12px;
+      nav {
+        flex-wrap: wrap;
       }
-      nav ul.open { display: flex; }
-      .menu-toggle { display: block; }
-      .side-logo { max-height: 65px; }
-      .nav-phone { font-size: 0.95rem; }
+      nav ul {
+        flex: 1 1 100%;
+        justify-content: center;
+        margin-top: 0.5rem;
+      }
+      .nav-phone {
+        flex: 1 1 100%;
+        text-align: center;
+        margin-top: 0.5rem;
+      }
     }
   </style>
+
+  <!-- JSON-LD schema for FAQ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What does Resolute Business Brokers do?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We specialize in selling businesses across the United States. We represent business owners in every aspect of selling their company, including the business itself, tangible assets, and real estate if necessary."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Where do you operate?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We represent business sellers throughout the United States, regardless of industry or location."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What types of businesses do you sell?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We work with all types of businesses, from small family-owned companies to larger enterprises, and across all industries."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
-
-  <nav role="navigation">
-    <a href="#heroContent"><img src="logo.png" alt="Resolute Business Brokers Logo" class="brand-logo"></a>
-    <div class="nav-phone"><a href="tel:7027868535">(702) 786-8535</a></div>
-    <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
-    <ul>
-      <li><a href="#heroContent">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
-
-  <header class="hero" role="banner">
-    <div class="overlay" aria-hidden="true"></div>
-
-    <div class="hero-content" id="heroContent">
-      <img src="logo.png" alt="Resolute Business Brokers" class="logo-hero">
-      <p>Your trusted partner in buying and selling businesses nationwide — based in Las Vegas, NV.</p>
-
-      <div class="cta-row">
-        <img src="CMAA-logo.png" alt="CMAA Logo" class="side-logo" loading="lazy">
-        <a class="btn" href="#contact">Request a Consultation</a>
-        <img src="AMAA-logo.png" alt="AMAA Logo" class="side-logo" loading="lazy">
-      </div>
-    </div>
+  <header>
+    <nav>
+      <div class="logo"><img src="logo.png" alt="Resolute Business Brokers"></div>
+      <div class="nav-phone"><a href="tel:7027868535">(702) 786-8535</a></div>
+      <ul>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <section id="about">
-    <h2>About Us</h2>
-    <p>
-      Resolute Business Brokers is a nationwide business brokerage firm headquartered in Las Vegas, NV. 
-      The professionals at Resolute Business Brokers bring a diverse background in both asset-based and stock transactions, guiding the execution of business sales across industries. 
-      With over two decades of experience and involvement in more than a hundred transactions, our team has worked in the small and middle market from coast to coast — ranging from resort-based businesses to medical service companies. 
-      We take a hands-on approach to every engagement, carefully considering each seller’s goals and needs while crafting the best strategy and structure to achieve them. 
-      Every transaction presents monetary, legal, and legacy considerations; we address these complexities from the outset to deliver the best possible outcome for our clients in all respects.
-    </p>
+  <section class="hero">
+    <img src="logo.png" alt="Resolute Business Brokers" class="logo-hero">
+    <h1>Resolute Business Brokers</h1>
+    <p>Helping business owners sell their companies nationwide with professionalism and integrity.</p>
+    <a href="#contact" class="btn">Get Started</a>
   </section>
 
   <section id="services">
     <h2>Our Services</h2>
-    <p>Business valuations, confidential marketing, buyer vetting, negotiation support, and closing guidance — from listing to transfer of ownership.</p>
+    <p>We represent sellers in all aspects of the sale process including marketing, negotiations, due diligence, and closing. We also handle the sale of hard assets and property if necessary.</p>
+  </section>
+
+  <section id="about">
+    <h2>About Us</h2>
+    <p>At Resolute Business Brokers, we are dedicated to guiding business owners through every step of selling their company. Our team has extensive experience in valuation, marketing, and deal-making.</p>
   </section>
 
   <section id="contact">
     <h2>Contact Us</h2>
-    <p>Email: <a href="mailto:chris@resolutebrokers.com" style="color:var(--accent);">chris@resolutebrokers.com</a><br>
-    Phone: (702) 786-8535</p>
+    <p>Ready to sell your business? Call us today at <span class="phone-number">(702) 786-8535</span> or fill out our online form.</p>
   </section>
 
-  <footer>&copy; 2025 Resolute Business Brokers | Las Vegas, NV</footer>
-
-  <script>
-    (function () {
-      const toggle = document.querySelector('.menu-toggle');
-      const menu = document.querySelector('nav ul');
-      toggle.addEventListener('click', () => {
-        const isOpen = menu.classList.toggle('open');
-        toggle.setAttribute('aria-expanded', isOpen);
-      });
-    })();
-  </script>
+  <footer>
+    <p>&copy; 2025 Resolute Business Brokers. All rights reserved.</p>
+  </footer>
 </body>
 </html>
