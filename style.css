@@ -59,9 +59,16 @@ footer {
   color: #e63946;
 }
 
-.nav-contact a {
-  color: var(--accent);
-  font-weight: 700;
-  margin-left: var(--space-md);
+.nav-phone a {
+  color: #fff;
   text-decoration: none;
+  font-weight: 700;
+}
+.nav-phone a:hover { color: var(--accent); }
+
+@media (max-width: 720px) {
+  .nav-phone {
+    margin-left: auto; /* keeps phone aligned with logo */
+    font-size: 0.95rem;
+  }
 }
