@@ -33,32 +33,34 @@
       background: #1f1f1f;
     }
 
-    /* NAV */
     nav {
       position: fixed;
       top: 0; left: 0;
       width: 100%;
       background: var(--nav-bg);
       display: flex;
-      justify-content: space-between;
+      justify-content: flex-start;
       align-items: center;
       padding: var(--space-sm) var(--space-md);
       box-sizing: border-box;
       z-index: 1200;
       flex-wrap: wrap;
+      gap: var(--space-md);
     }
     nav .brand-logo {
       max-height: 48px;
       width: auto;
     }
     .nav-phone {
-      margin-left: var(--space-sm);
-      margin-right: auto;
       font-weight: 700;
+      color: #fff;
+      margin-left: 12px;
+      font-size: 1rem;
     }
     .nav-phone a {
       color: #fff;
       text-decoration: none;
+      font-weight: 700;
     }
     .nav-phone a:hover { color: var(--accent); }
 
@@ -69,6 +71,7 @@
       background: none;
       border: none;
       color: #fff;
+      margin-left: auto;
     }
     nav ul {
       display: flex;
@@ -77,6 +80,7 @@
       margin: 0;
       padding: 0;
       flex-wrap: wrap;
+      margin-left: auto;
     }
     nav a {
       color: #fff;
@@ -85,7 +89,6 @@
     }
     nav a:hover { color: var(--accent); }
 
-    /* HERO */
     .hero {
       background: url('lasvegas.jpg') no-repeat center center/cover;
       height: 100vh;
@@ -136,7 +139,6 @@
     }
     .btn:hover { filter: brightness(.95); }
 
-    /* Logos beside button */
     .cta-row {
       display: flex;
       justify-content: center;
@@ -150,7 +152,6 @@
       width: auto;
     }
 
-    /* Sections */
     section {
       padding: var(--space-xl) var(--space-sm);
       text-align: center;
@@ -183,7 +184,6 @@
       color: #bbb;
     }
 
-    /* Responsive adjustments */
     @media (max-width: 720px) {
       .hero p { font-size: 1rem; }
       .logo-hero { max-width: 300px; width: 70%; }
@@ -198,12 +198,11 @@
         width: 220px;
         padding: var(--space-sm);
         border-radius: 0 0 0 12px;
-        transition: all 0.3s ease-in-out;
       }
       nav ul.open { display: flex; }
       .menu-toggle { display: block; }
       .side-logo { max-height: 65px; }
-      .nav-phone { display: none; }
+      .nav-phone { font-size: 0.95rem; }
     }
   </style>
 </head>
@@ -211,7 +210,7 @@
 
   <nav role="navigation">
     <a href="#heroContent"><img src="logo.png" alt="Resolute Business Brokers Logo" class="brand-logo"></a>
-    <div class="nav-phone"><a href="tel:+17027868535">(702) 786-8535</a></div>
+    <div class="nav-phone"><a href="tel:7027868535">(702) 786-8535</a></div>
     <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
     <ul>
       <li><a href="#heroContent">Home</a></li>
@@ -221,14 +220,13 @@
     </ul>
   </nav>
 
-  <header class="hero" role="banner" aria-label="Las Vegas skyline background">
+  <header class="hero" role="banner">
     <div class="overlay" aria-hidden="true"></div>
 
     <div class="hero-content" id="heroContent">
-      <img src="logo.png" alt="Resolute Business Brokers" class="logo-hero" loading="lazy">
+      <img src="logo.png" alt="Resolute Business Brokers" class="logo-hero">
       <p>Your trusted partner in buying and selling businesses nationwide — based in Las Vegas, NV.</p>
 
-      <!-- Logos beside button -->
       <div class="cta-row">
         <img src="CMAA-logo.png" alt="CMAA Logo" class="side-logo" loading="lazy">
         <a class="btn" href="#contact">Request a Consultation</a>
@@ -262,7 +260,6 @@
   <footer>&copy; 2025 Resolute Business Brokers | Las Vegas, NV</footer>
 
   <script>
-    // Mobile menu toggle with accessibility
     (function () {
       const toggle = document.querySelector('.menu-toggle');
       const menu = document.querySelector('nav ul');
@@ -271,26 +268,6 @@
         toggle.setAttribute('aria-expanded', isOpen);
       });
     })();
-  </script>
-
-  <!-- JSON-LD Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Resolute Business Brokers",
-    "image": "logo.png",
-    "telephone": "+17027868535",
-    "email": "chris@resolutebrokers.com",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Las Vegas",
-      "addressRegion": "NV",
-      "addressCountry": "US"
-    },
-    "url": "https://resolutebrokers.com",
-    "description": "Resolute Business Brokers helps clients nationwide buy and sell businesses with expert valuations, negotiations, and closing support."
-  }
   </script>
 </body>
 </html>
