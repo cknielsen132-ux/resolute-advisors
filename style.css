@@ -53,3 +53,15 @@ footer {
   margin-bottom: 16px;
   position: relative;
   top: -40px;   
+
+.phone-number {
+  font-weight: 600;
+  color: #e63946;
+}
+
+.nav-contact a {
+  color: var(--accent);
+  font-weight: 700;
+  margin-left: var(--space-md);
+  text-decoration: none;
+}
