@@ -29,7 +29,6 @@ section h2 {
   margin-bottom: 1rem;
 }
 
-/* Footer */
 footer {
   background: #1e2a38;
   color: #fff;
@@ -46,14 +45,6 @@ footer {
   top: -40px;  
 }
 
-.logo-hero {
-  max-width: 320px;   
-  width: 80%;         
-  height: auto;
-  margin-bottom: 16px;
-  position: relative;
-  top: -40px;   
-
 .phone-number {
   font-weight: 600;
   color: #e63946;
@@ -64,11 +55,13 @@ footer {
   text-decoration: none;
   font-weight: 700;
 }
-.nav-phone a:hover { color: var(--accent); }
+.nav-phone a:hover { 
+  color: var(--accent); 
+}
 
 @media (max-width: 720px) {
   .nav-phone {
-    margin-left: auto; /* keeps phone aligned with logo */
+    margin-left: auto;
     font-size: 0.95rem;
   }
 }
