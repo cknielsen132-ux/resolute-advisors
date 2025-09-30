@@ -54,3 +54,22 @@ footer {
   position: relative;
   top: -40px;   
 }
+
+.phone-number {
+  font-weight: 600;
+  color: #e63946; 
+}
+
+.phone-number:hover {
+  color: #d62828;
+}
+
+@media (max-width: 768px) {
+  nav ul .phone-nav {
+    display: block;  
+  }
+
+  nav ul {
+    flex-wrap: wrap;
+  }
+}
